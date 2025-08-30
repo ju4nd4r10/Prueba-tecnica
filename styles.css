@@ -1,107 +1,118 @@
 /* =======================
-   Estilos globales
+   Estilos en general de la pagina
 ======================= */
 body {
-    font-family: "Segoe UI", Tahoma, sans-serif;
-    background: url("/img/imagenMarca.png") no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: url("/img/imagenMarca.png") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
 /* =======================
    Contenedor principal
 ======================= */
 .container {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 40px;
-    max-width: 600px;
-    width: 90%;
-    font-size: 0.85rem;
-    border: 1.5px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 3px 18px rgba(0, 0, 0, 0.15);
-    animation: fadeIn 0.6s ease-in-out;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 40px;
+  max-width: 600px;
+  width: 90%;
+  font-size: 0.85rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 .container h2 {
-    text-align: center;
-    margin: 5px 0 18px;
-    font-size: 22px;
+  text-align: center;
+  margin: 5px 0 18px;
+  font-size: 22px;
 }
 
 /* =======================
-   Animaciones
+   Animacion
 ======================= */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* =======================
    Formulario
 ======================= */
 .form-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px 20px;
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px 20px;
+  width: 100%;
 }
 
 .form-group {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-group input,
 .form-group select {
-    width: 100%;
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
 }
 
 .full-width {
-    grid-column: span 2;
+  grid-column: span 2;
 }
 
 /* =======================
    Botón
 ======================= */
 form button {
-    grid-column: 1 / 3;
-    justify-self: center;
-    width: 150px;
-    padding: 12px;
-    font-size: 14px;
-    font-weight: bold;
-    border: none;
-    border-radius: 6px;
-    background: #2623cc;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    margin-top: 20px;
+  grid-column: 1 / 3;
+  justify-self: center;
+  width: 150px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  background: #2623cc;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 20px;
 }
 
 form button:hover {
-    background: #190aa8;
+  background: #190aa8;
 }
 
+.form-actions {
+  text-align: center;
+  margin-top: 20px;
+}
 
 button {
   --glow-color: rgb(132, 133, 134);
   --glow-spread-color: rgba(117, 115, 115, 0.781);
   --enhanced-glow-color: rgb(184, 16, 16);
   --btn-color: rgba(255, 255, 255, 0.508);
-  border: .25em solid var(--glow-color);
+  border: 0.25em solid var(--glow-color);
   padding: 1em 2em;
   color: var(--glow-color);
   font-size: 14px;
@@ -109,13 +120,14 @@ button {
   background-color: var(--btn-color);
   border-radius: 1em;
   outline: none;
-  box-shadow: 0 0 1em .25em var(--glow-color),
-        0 0 4em 1em var(--glow-spread-color),
-        inset 0 0 .05em .25em var(--glow-color);
-  text-shadow: 0 0 .5em var(--glow-color);
+  box-shadow: 0 0 1em 0.25em var(--glow-color),
+    0 0 4em 1em var(--glow-spread-color),
+    inset 0 0 0.05em 0.25em var(--glow-color);
+  text-shadow: 0 0 0.5em var(--glow-color);
   position: relative;
   transition: all 0.3s;
 }
+
 button::after {
   pointer-events: none;
   content: "";
@@ -126,44 +138,24 @@ button::after {
   width: 100%;
   background-color: var(--glow-spread-color);
   filter: blur(2em);
-  opacity: .7;
-  transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+  opacity: 0.7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
 }
 
 button:hover {
   color: var(--btn-color);
   background-color: var(--glow-color);
-  box-shadow: 0 0 1em .25em var(--glow-color),
-        0 0 4em 2em var(--glow-spread-color),
-        inset 0 0 .75em .25em var(--glow-color);
+  box-shadow: 0 0 1em 0.25em var(--glow-color),
+    0 0 4em 2em var(--glow-spread-color),
+    inset 0 0 0.75em 0.25em var(--glow-color);
 }
 
 button:active {
-  box-shadow: 0 0 0.6em .25em var(--glow-color),
-        0 0 2.5em 2em var(--glow-spread-color),
-        inset 0 0 .5em .25em var(--glow-color);
-}
-
-/* =======================
-   Errores
-======================= */
-.error {
-    display: block;
-    min-height: 14px;
-    font-size: 11px;
-    color: red;
-    margin-top: 2px;
-    line-height: 1.2;
-}
-
-.form-actions {
-    text-align: center;
-    margin-top: 20px;
+  box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+    0 0 2.5em 2em var(--glow-spread-color),
+    inset 0 0 0.5em 0.25em var(--glow-color);
 }
 
 .form-actions button {
-    width: 150px;
+  width: 150px;
 }
-
-
-
